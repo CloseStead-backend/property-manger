@@ -1,0 +1,32 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add bcryptjs
+
+PATH: 
+  /usr/local/opt/postgresql@15/bin:/usr/local/opt/openjdk/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin:/usr/local/opt/postgresql@15/bin:/usr/local/opt/openjdk/bin:/opt/local/bin:/opt/local/sbin:/Users/mac/Library/Android/sdk/emulator:/Users/mac/Library/Android/sdk/platform-tools:/usr/local/Cellar/gradle/8.2.1:/Users/mac/Library/Android/sdk/emulator:/Users/mac/Library/Android/sdk/platform-tools:/usr/local/Cellar/gradle/8.2.1
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.5.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26)
+
+npm manifest: 
+  {
+    "name": "property-manager",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
