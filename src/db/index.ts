@@ -1,20 +1,22 @@
-import { Sequelize } from "sequelize";
+import mongoose from "mongoose";
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME as string,
-  process.env.DB_USER as string,
-  process.env.DB_PASSWORD as string,
-  {
-    dialect: "postgres",
-    host: process.env.DB_HOST,
-    port: parseInt(process.env.DB_PORT as string),
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
-  }
+export const DATABASE = async () => {
+  try {
+   const connect = await mongoose.connect(
+  `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.d8bojru.mongodb.net/${process.env.MONGODB_NAME}`
 );
+;
+    console.log(
+      `database has been connected successfully to ${JSON.stringify(
+        connect.connection.host
+      )}`
+    );
+  } catch (error) {
+    console.error(`Mongodb connection error ${JSON.stringify(error)}`);
+    process.exit(1);
+  }
+};
 
-export default sequelize;
+// const connect = await mongoose.connect(
+//   `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.d8bojru.mongodb.net/horizon`
+// );
